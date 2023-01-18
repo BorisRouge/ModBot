@@ -1,13 +1,33 @@
+from utils import data
+
+
 class RuleManager:
     #  def refresh_rules
-    pass
-
-class Rule:
     def __init__(self):
-        self._name = ''
-        self._markers = {}  # TODO: move to an external file, should be refreshable on demand
-        self._triggered = False
+        self.rules = data.rules
 
-    def check(self, text):
-        if self._markers not in text:
-            self._triggered = True
+    def check(self, text) -> (bool, list):
+
+        print(data.rules, data.format.markers)
+
+        result = True
+        checklist = []
+        for rule in self.rules:
+            for marker in rule.markers:
+                if marker in text:
+                    checklist.append((rule.name, True))
+                    break
+                else:
+                    checklist.append((rule.name, False))
+                    result = False
+                    break
+        return result, checklist
+
+    def is_vacancy(self, text):
+        if '#Вакансия' in text:  #TODO: накидать вариаций
+            return True
+
+
+
+
+

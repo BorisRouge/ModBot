@@ -1,9 +1,19 @@
 from aiogram.types import Message
-from bot import bot, dp
+from bot import bot, dp, rm, log
 
 
-async def handle(message:Message):
+async def handle(message: Message):
+    log.info(message.text)
+    if rm.is_vacancy(message.text):
+        result = rm.check(message.text)
+        log.info(result)
+        if result[0]:
+            pass
+        else:
+            await message.reply(
+                f'you have fucked up with the following:\n' # TODO: форматнуть в список
+                f'{result[1]}')
 
-    for rule in rules:
-        if rule.markers not in message.text:
-            rule.triggered()
+
+def register_user(d: dp):
+    d.register_message_handler(handle)
