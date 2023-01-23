@@ -9,15 +9,7 @@ class RuleManager:
         result = True
         checklist = []
         for rule in self.rules:
-            no_markers = True
-            for marker in rule.markers:
-                if marker in text.lower():
-                    checklist.append((rule.name, 'OK'))
-                    no_markers = False
-                    break
-            if no_markers:
-                checklist.append((rule.name, 'X'))
-                result = False
+            result, checklist = rule.apply(text, checklist, result)
         return result, checklist
 
     def is_vacancy(self, text):
