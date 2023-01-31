@@ -1,6 +1,6 @@
 from aiogram import Bot, Dispatcher
 from utils import settings
-from utils.rules import RuleManager
+from utils.rule_manager import RuleManager
 from utils.logger import get_logger
 
 
