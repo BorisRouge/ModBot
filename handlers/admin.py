@@ -1,6 +1,8 @@
 from aiogram.types import Message, InputFile
-from bot import bot, config, dp
-
+from aiogram.dispatcher import FSMContext
+from bot import bot, config, dp, rm
+from utils.states import StateAdmin
+from utils.buttons import Button
 
 async def get_rules(message: Message):
     """Выгружает файл с правилами по команде администратора в его личку."""
@@ -36,4 +38,4 @@ async def cancel_button(message: Message, state: FSMContext):
 def register_admin(d: dp):
     d.register_message_handler(get_rules, user_id=config.telegram.admin, commands=['get'], state='*')
     d.register_message_handler(initiate_set_rules, user_id=config.telegram.admin, commands=['set'], state='*')
-    d.register_message_handler(set_rules, user_id=config.telegram.admin, commands=['set'], state=StateAdmin.R1
+    d.register_message_handler(set_rules, user_id=config.telegram.admin, commands=['set'], state=StateAdmin.R1)
