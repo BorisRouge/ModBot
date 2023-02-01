@@ -1,4 +1,4 @@
-from aiogram.types import Message, InputFile
+from aiogram.types import Message, CallbackQuery, InputFile
 from aiogram.dispatcher import FSMContext
 from bot import bot, config, dp, rm
 from utils.states import StateAdmin
@@ -14,28 +14,44 @@ async def set_rules(message: Message, state: FSMContext):
     """Загружает файл с правилами в бота по указанному в файле настроек адресу."""
     # Небольшая проверка на наличие файла и то, что направлен правильный (только по названию).
     if message.document.file_name == config.rules.file_name:  # https://docs.aiogram.dev/en/latest/_modules/aiogram/types/document.html?highlight=helper.Item()
-        await message.document.download(config.rules.path)    
-        state.reset_state()
-        rm.refresh()
+        await message.document.download(config.rules.path)
+        await state.reset_state()
+        rm.refresh_rules()
         await message.answer('Правила обновлены.')
     else:
         await message.answer('Проверьте название файла, операция отменена.')
-        state.reset_state()    
+        await state.reset_state()
 
     
 async def initiate_set_rules(message: Message):
     """Начало операции обновления файла правил."""
-    await message.answer('Выгрузите файл с правилами', reply_markup=Button().cancel)
+    await message.answer('Выгрузите файл с правилами',
+                         reply_markup=Button().cancel)
     await StateAdmin.R1.set()
+    print(StateAdmin.R1)
+    print(dp.storage)
     
     
-async def cancel_button(message: Message, state: FSMContext):
+async def cancel_button(callback: CallbackQuery, state: FSMContext):
     """Логика кнопки отмены"""
     await state.reset_state()
-    await message.answer('Операция отменена.')
+    await bot.send_message(callback.from_user.id, 'Операция отменена.')
 
 
 def register_admin(d: dp):
-    d.register_message_handler(get_rules, user_id=config.telegram.admin, commands=['get'], state='*')
-    d.register_message_handler(initiate_set_rules, user_id=config.telegram.admin, commands=['set'], state='*')
-    d.register_message_handler(set_rules, user_id=config.telegram.admin, commands=['set'], state=StateAdmin.R1)
+    d.register_message_handler(get_rules,
+                               user_id=config.telegram.admin,
+                               commands=['get'],
+                               state='*'
+                               )
+    d.register_message_handler(initiate_set_rules,
+                               user_id=config.telegram.admin,
+                               commands=['set'],
+                               state='*'
+                               )
+    d.register_message_handler(set_rules,
+                               user_id=config.telegram.admin,
+                               content_types='document',
+                               state=StateAdmin.R1
+                               )
+    d.register_callback_query_handler(cancel_button, text='cancel', state='*')
