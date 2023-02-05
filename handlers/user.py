@@ -1,5 +1,5 @@
 from aiogram.types import Message
-from bot import bot, dp, rm, log
+from bot import rm, log
 
 
 async def handle(message: Message):
@@ -22,5 +22,5 @@ async def handle(message: Message):
             await message.reply(text)
 
 
-def register_user(d: dp):
-    d.register_message_handler(handle)
+def register_user(dp):
+    dp.register_message_handler(handle)

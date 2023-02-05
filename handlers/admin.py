@@ -1,6 +1,6 @@
 from aiogram.types import Message, CallbackQuery, InputFile
 from aiogram.dispatcher import FSMContext
-from bot import bot, config, dp, rm
+from bot import bot, config, rm
 from utils.states import StateAdmin
 from utils.buttons import Button
 
@@ -28,8 +28,6 @@ async def initiate_set_rules(message: Message):
     await message.answer('Выгрузите файл с правилами',
                          reply_markup=Button().cancel)
     await StateAdmin.R1.set()
-    print(StateAdmin.R1)
-    print(dp.storage)
     
     
 async def cancel_button(callback: CallbackQuery, state: FSMContext):
@@ -38,20 +36,20 @@ async def cancel_button(callback: CallbackQuery, state: FSMContext):
     await bot.send_message(callback.from_user.id, 'Операция отменена.')
 
 
-def register_admin(d: dp):
-    d.register_message_handler(get_rules,
-                               user_id=config.telegram.admin,
-                               commands=['get'],
-                               state='*'
-                               )
-    d.register_message_handler(initiate_set_rules,
-                               user_id=config.telegram.admin,
-                               commands=['set'],
-                               state='*'
-                               )
-    d.register_message_handler(set_rules,
-                               user_id=config.telegram.admin,
-                               content_types='document',
-                               state=StateAdmin.R1
-                               )
-    d.register_callback_query_handler(cancel_button, text='cancel', state='*')
+def register_admin(dp):
+    dp.register_message_handler(get_rules,
+                                user_id=config.telegram.admin,
+                                commands=['get'],
+                                state='*'
+                                )
+    dp.register_message_handler(initiate_set_rules,
+                                user_id=config.telegram.admin,
+                                commands=['set'],
+                                state='*'
+                                )
+    dp.register_message_handler(set_rules,
+                                user_id=config.telegram.admin,
+                                content_types='document',
+                                state=StateAdmin.R1
+                                )
+    dp.register_callback_query_handler(cancel_button, text='cancel', state='*')
