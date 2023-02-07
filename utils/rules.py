@@ -92,7 +92,7 @@ schedule = KeywordRule(name='Занятость',
 name = KeywordRule(name='Название',                                    # TODO: что если тут просто название компании
                 keywords={'компан', 'назван', 'работодат'})  # TODO: под удаление
 income = KeywordRule(name='Вознаграждение',
-                  keywords={'зп', 'оклад', 'вилка', 'вознагражд', 'зарплат', 'зп', 'з//п', 'з\\п',})
+                  keywords={'зп', 'оклад', 'вилка', 'заработн', 'вознагражд', 'зарплат', 'зп', 'з//п', 'з\\п',})
 employment = KeywordRule(name='Варианты трудоустройства',
                       keywords={'трудоустройств', 'официальн', 'самозанятост', 'ИП', 'ООО'})
 
@@ -103,7 +103,7 @@ fork = ForkRule('Вилка')
 
 """output"""
 to_be_used = [format, income, schedule, name, employment, fork]  # TODO: make the class autoappend here
-vacancy = {'#вакансия','# вакансия'}
+vacancy = {'#вакансия','# вакансия','#vacancy','# vacancy'}
 
 # TODO: - с корректным указанием валюты
 # TODO: - размерности (писать 300к, а не просто 300)
