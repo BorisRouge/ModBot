@@ -1,6 +1,6 @@
 from aiogram.types import Message, CallbackQuery, InputFile
 from aiogram.dispatcher import FSMContext
-from bot import bot, config, rm
+from bot import bot, config, rm, log
 from utils.states import StateAdmin
 from utils.buttons import Button
 
@@ -40,7 +40,7 @@ def register_admin(dp):
     dp.register_message_handler(get_rules,
                                 user_id=config.telegram.admin,
                                 commands=['get'],
-                                state='*'
+                                state='*',
                                 )
     dp.register_message_handler(initiate_set_rules,
                                 user_id=config.telegram.admin,
