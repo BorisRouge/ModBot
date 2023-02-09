@@ -22,8 +22,8 @@ async def handle(message: Message):
                 # Форматирование ответа.
                 for item in checklist:
                     n = len(item[0])
-                    n = 25 if n > 25 else n
-                    line = item[0][:25] + "—   ".rjust(30 - n) + item[1] + "\n"
+                    n = 20 if n > 20 else n
+                    line = item[0][:20] + "—   ".rjust(25 - n) + item[1] + "\n"
                     body.append(line)
                 body.append('`')
                 body.append('\n*Ссылка на правила — https://t.me/python_vacancy/66*')

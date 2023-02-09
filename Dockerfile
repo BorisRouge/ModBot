@@ -1,14 +1,14 @@
 FROM python:3.9-slim
 
 WORKDIR /home/ModBot
-COPY . /home/ChatGPTbot
+COPY . /home/ModBot
+ENV PYTHONPATH /home/ModBot
 RUN pip install -r requirements.txt
 
 
 # указать переменные окружения здесь или при запуске контейнера
-ENV ADMIN_ID
-ENV TELEGRAM_BOT_TOKEN
-RULES_FILENAME=rules.py
-RULES_PATH=utils/rules.py
+
+ENV RULES_FILENAME='rules.py'
+ENV RULES_PATH='utils/rules.py'
 
 ENTRYPOINT python start.py
