@@ -36,22 +36,24 @@ class ForkRule:
         for item in checklist:
             if item == ('Вознаграждение', 'OK'):
                 # Находим все числа, похожие на суммы.
-                amounts = re.findall(r'(\\d{1,3}[.,\s]\d{3}|\d{3,})', text)
-                if len(amounts) >= 2:  #  Ищем суммы, похожие на вилку.
+                amounts = re.findall(r'(\d{1,3}[.,\s]\d{3}|\d{3,})', text)
+                if len(amounts) >= 2:  # Ищем суммы, похожие на вилку.
                     if text.index(amounts[1]) - text.index(amounts[0]) <= 30:
-                        if not self.check_fork(amounts):
+                        if not self._check_fork(amounts):
                             checklist.append((self.name, 'X'))
                             result = False
         return result, checklist
 
-    def check_fork(self, amounts):
-        def prepare(amount):
-            for separator in (" ", ",", "."):
-                amount = amount.replace(separator, "")
-            return int(amount)
-        # Рассчет длины разницы (для различения 500 или 50 000).
-        difference = 5*10**(len(str(prepare(amounts[0])))-2)
-        return prepare(amounts[1])-prepare(amounts[0]) <= difference
+    def _clean(self, amount) -> int:
+        """Очистка суммы от разделителей."""
+        for separator in (" ", ",", "."):
+            amount = amount.replace(separator, "")
+        return int(amount)
+
+    def _check_fork(self, amounts) -> bool:
+        """Проверка предполагаемой вилки на установленный разброс."""
+        difference = 5*10**(len(str(self._clean(amounts[0])))-2) # 500 или 50 000.
+        return self._clean(amounts[1])-self._clean(amounts[0]) <= difference
 
 
 """KeywordRules"""

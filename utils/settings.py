@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from environs import Env
+import os
 
 
 @dataclass
@@ -22,15 +22,13 @@ class Settings:
 
 def get_config(path: str = None):
     """Получение переменных из указанной среды."""
-    env = Env()
-    env.read_env(path)
     return Settings(
         telegram=Telegram(
-            telegram_bot_token=env.str('TELEGRAM_BOT_TOKEN'),
-            admin=env.str('TELEGRAM_ADMIN'),
+            telegram_bot_token=os.getenv('TELEGRAM_BOT_TOKEN'),
+            admin=os.getenv('TELEGRAM_ADMIN'),
         ),
         rules=Rules(
-            file_name=env.str('RULES_FILENAME'),
-            path=env.str('RULES_PATH'),
+            file_name=os.getenv('RULES_FILENAME'),
+            path=os.getenv('RULES_PATH'),
         ),
     )
