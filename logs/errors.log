@@ -1,0 +1,215 @@
+2023-07-11 06:43:27,594 WARNING Updates were skipped successfully.
+2023-07-11 07:23:16,303 WARNING Goodbye!
+2023-07-11 07:23:20,863 WARNING Updates were skipped successfully.
+2023-07-11 07:51:11,192 WARNING Goodbye!
+2023-07-11 07:51:15,220 WARNING Updates were skipped successfully.
+2023-07-11 07:53:26,502 WARNING Goodbye!
+2023-07-11 07:53:30,775 WARNING Updates were skipped successfully.
+2023-07-11 07:59:35,518 WARNING Goodbye!
+2023-07-11 07:59:39,932 WARNING Updates were skipped successfully.
+2023-07-12 07:41:22,168 WARNING Updates were skipped successfully.
+2023-07-12 07:42:25,178 WARNING Goodbye!
+2023-07-12 07:42:29,554 WARNING Updates were skipped successfully.
+2023-07-12 07:44:46,780 WARNING Goodbye!
+2023-07-12 07:44:50,461 WARNING Updates were skipped successfully.
+2023-07-12 07:49:42,156 WARNING Goodbye!
+2023-07-12 07:49:46,055 WARNING Updates were skipped successfully.
+2023-07-12 08:21:15,810 WARNING Goodbye!
+2023-07-12 08:21:25,236 WARNING Updates were skipped successfully.
+2023-07-12 09:06:15,437 WARNING Goodbye!
+2023-07-12 09:13:32,182 WARNING Updates were skipped successfully.
+2023-07-12 09:14:10,045 ERROR Ошибка в работе бота: 
+ RuleManager.is_suspicious() missing 1 required positional argument: 'text'
+2023-07-12 09:15:03,367 ERROR Ошибка в работе бота: 
+ RuleManager.is_suspicious() missing 1 required positional argument: 'text'
+2023-07-12 10:15:20,817 WARNING Updates were skipped successfully.
+2023-07-12 17:37:01,634 WARNING Updates were skipped successfully.
+2023-07-12 20:03:47,570 ERROR Cause exception while getting updates.
+Traceback (most recent call last):
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 139, in make_request
+    async with session.post(url, data=req, **kwargs) as response:
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiohttp/client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiohttp/client.py", line 560, in _request
+    await resp.start(conn)
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiohttp/client_reqrep.py", line 899, in start
+    message, payload = await protocol.read()  # type: ignore[union-attr]
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiohttp/streams.py", line 616, in read
+    await self._waiter
+aiohttp.client_exceptions.ServerDisconnectedError: Server disconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiogram/dispatcher/dispatcher.py", line 381, in start_polling
+    updates = await self.bot.get_updates(
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiogram/bot/bot.py", line 110, in get_updates
+    result = await self.request(api.Methods.GET_UPDATES, payload)
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiogram/bot/base.py", line 236, in request
+    return await api.make_request(await self.get_session(), self.server, self.__token, method, data, files,
+  File "/home/runner/ModBot-1/venv/lib/python3.10/site-packages/aiogram/bot/api.py", line 142, in make_request
+    raise exceptions.NetworkError(f"aiohttp client throws an error: {e.__class__.__name__}: {e}")
+aiogram.utils.exceptions.NetworkError: Aiohttp client throws an error: ServerDisconnectedError: Server disconnected
+2023-07-13 10:02:03,845 WARNING Updates were skipped successfully.
+2023-07-13 10:17:36,503 WARNING Goodbye!
+2023-07-13 10:17:40,677 WARNING Updates were skipped successfully.
+2023-07-13 10:18:26,945 ERROR Ошибка в работе бота: 
+ Message can't be deleted
+2023-07-13 10:20:26,700 WARNING Goodbye!
+2023-07-13 10:20:30,214 WARNING Updates were skipped successfully.
+2023-07-13 10:24:37,301 WARNING Goodbye!
+2023-07-13 10:24:42,220 WARNING Updates were skipped successfully.
+2023-07-13 10:25:32,405 WARNING Goodbye!
+2023-07-13 10:25:35,900 WARNING Updates were skipped successfully.
+2023-07-13 10:28:27,177 ERROR Ошибка в работе бота: 
+ can only concatenate str (not "list") to str
+2023-07-14 06:36:48,022 WARNING Updates were skipped successfully.
+2023-07-14 06:38:49,095 WARNING Goodbye!
+2023-07-14 06:38:52,702 WARNING Updates were skipped successfully.
+2023-07-14 06:38:54,400 ERROR Ошибка в работе бота: 
+ can only concatenate str (not "list") to str
+2023-07-14 06:39:56,531 WARNING Goodbye!
+2023-07-14 06:39:59,760 WARNING Updates were skipped successfully.
+2023-07-14 06:40:05,593 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'append'
+2023-07-14 06:41:16,387 WARNING Goodbye!
+2023-07-14 06:41:19,621 WARNING Updates were skipped successfully.
+2023-07-14 06:41:27,527 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'append'
+2023-07-14 06:42:42,336 WARNING Goodbye!
+2023-07-14 06:42:45,660 WARNING Updates were skipped successfully.
+2023-07-14 06:42:53,472 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'append'
+2023-07-14 06:43:18,528 WARNING Goodbye!
+2023-07-14 06:43:21,996 WARNING Updates were skipped successfully.
+2023-07-14 06:43:27,512 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'append'
+2023-07-14 06:45:27,261 WARNING Goodbye!
+2023-07-14 06:45:30,739 WARNING Updates were skipped successfully.
+2023-07-14 06:49:16,238 WARNING Goodbye!
+2023-07-14 06:49:19,454 WARNING Updates were skipped successfully.
+2023-07-14 06:52:51,863 WARNING Goodbye!
+2023-07-14 06:52:55,322 WARNING Updates were skipped successfully.
+2023-07-14 06:53:13,277 WARNING Goodbye!
+2023-07-14 06:53:16,522 WARNING Updates were skipped successfully.
+2023-07-14 06:56:34,574 WARNING Goodbye!
+2023-07-14 06:56:38,205 WARNING Updates were skipped successfully.
+2023-07-14 06:56:40,649 ERROR Ошибка в работе бота: 
+ 'set' object is not subscriptable
+2023-07-14 06:57:11,962 WARNING Goodbye!
+2023-07-14 06:57:15,228 WARNING Updates were skipped successfully.
+2023-07-14 06:57:51,369 WARNING Goodbye!
+2023-07-14 06:57:54,815 WARNING Updates were skipped successfully.
+2023-07-14 06:58:14,660 ERROR Ошибка в работе бота: 
+ 'user'
+2023-07-14 07:06:19,064 WARNING Goodbye!
+2023-07-14 07:06:23,390 WARNING Updates were skipped successfully.
+2023-07-14 07:06:55,395 ERROR Ошибка в работе бота: 
+ 'user_data'
+2023-07-14 07:09:31,529 WARNING Goodbye!
+2023-07-14 07:09:34,501 WARNING Updates were skipped successfully.
+2023-07-14 07:10:43,683 WARNING Goodbye!
+2023-07-14 07:10:47,826 WARNING Updates were skipped successfully.
+2023-07-14 07:11:18,170 WARNING Goodbye!
+2023-07-14 07:11:21,898 WARNING Updates were skipped successfully.
+2023-07-14 07:12:27,410 WARNING Goodbye!
+2023-07-14 07:12:30,756 WARNING Updates were skipped successfully.
+2023-07-14 07:40:54,264 WARNING Goodbye!
+2023-07-14 07:42:19,592 WARNING Updates were skipped successfully.
+2023-07-14 07:48:41,064 WARNING Goodbye!
+2023-07-14 07:48:44,517 WARNING Updates were skipped successfully.
+2023-07-20 03:11:35,129 WARNING Updates were skipped successfully.
+2023-07-20 03:28:20,995 WARNING Goodbye!
+2023-07-20 03:28:24,841 WARNING Updates were skipped successfully.
+2023-07-20 03:34:37,358 WARNING Goodbye!
+2023-07-20 03:34:50,599 WARNING Updates were skipped successfully.
+2023-07-20 03:45:07,175 WARNING Goodbye!
+2023-07-20 03:45:10,943 WARNING Updates were skipped successfully.
+2023-07-20 03:47:19,459 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'id'
+2023-07-20 03:49:57,384 WARNING Goodbye!
+2023-07-20 03:51:07,814 WARNING Updates were skipped successfully.
+2023-07-20 03:51:22,286 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'id'
+2023-07-20 03:52:10,929 WARNING Goodbye!
+2023-07-20 03:53:22,081 WARNING Updates were skipped successfully.
+2023-07-20 03:53:48,930 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'id'
+2023-07-20 03:55:23,529 WARNING Goodbye!
+2023-07-20 03:55:27,082 WARNING Updates were skipped successfully.
+2023-07-20 03:55:36,508 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'id'
+2023-07-20 03:58:49,823 WARNING Goodbye!
+2023-07-20 03:58:53,655 WARNING Updates were skipped successfully.
+2023-07-20 03:59:04,626 ERROR Ошибка в работе бота: 
+ local variable 'recr_id' referenced before assignment
+2023-07-20 04:00:29,368 WARNING Goodbye!
+2023-07-20 04:00:33,023 WARNING Updates were skipped successfully.
+2023-07-20 04:01:22,878 WARNING Goodbye!
+2023-07-20 04:01:26,370 WARNING Updates were skipped successfully.
+2023-07-20 04:05:57,481 WARNING Goodbye!
+2023-07-20 04:06:01,413 WARNING Updates were skipped successfully.
+2023-07-20 04:08:33,342 WARNING Goodbye!
+2023-07-20 04:09:06,180 WARNING Updates were skipped successfully.
+2023-07-20 07:33:50,907 WARNING Goodbye!
+2023-07-20 07:33:54,524 WARNING Updates were skipped successfully.
+2023-07-20 08:50:08,007 WARNING Goodbye!
+2023-07-20 08:50:11,966 WARNING Updates were skipped successfully.
+2023-07-20 08:55:27,640 WARNING Goodbye!
+2023-07-20 08:55:31,814 WARNING Updates were skipped successfully.
+2023-07-20 09:04:35,553 WARNING Goodbye!
+2023-07-20 09:04:39,266 WARNING Updates were skipped successfully.
+2023-07-20 09:04:43,720 ERROR Ошибка в работе бота: 
+ 'MessageEntity' object has no attribute 'get'
+2023-07-20 09:05:20,772 WARNING Goodbye!
+2023-07-20 09:05:24,944 WARNING Updates were skipped successfully.
+2023-07-20 09:06:15,398 WARNING Goodbye!
+2023-07-20 09:06:19,534 WARNING Updates were skipped successfully.
+2023-07-20 09:10:29,390 WARNING Goodbye!
+2023-07-20 09:10:33,672 WARNING Updates were skipped successfully.
+2023-07-20 09:11:32,223 WARNING Goodbye!
+2023-07-20 09:11:36,404 WARNING Updates were skipped successfully.
+2023-07-20 09:39:50,186 WARNING Goodbye!
+2023-07-20 09:39:54,599 WARNING Updates were skipped successfully.
+2023-07-20 10:01:19,035 WARNING Goodbye!
+2023-07-20 10:19:46,691 WARNING Updates were skipped successfully.
+2023-07-20 10:20:08,250 ERROR Ошибка в работе бота: 
+ LinkRule._get_urls() takes 1 positional argument but 2 were given
+2023-07-20 10:22:42,881 WARNING Goodbye!
+2023-07-20 10:22:46,650 WARNING Updates were skipped successfully.
+2023-07-20 10:22:56,038 ERROR Ошибка в работе бота: 
+ KeywordRule.apply() takes 4 positional arguments but 5 were given
+2023-07-20 10:23:12,104 WARNING Goodbye!
+2023-07-20 10:23:16,176 WARNING Updates were skipped successfully.
+2023-07-20 10:23:25,650 ERROR Ошибка в работе бота: 
+ 'NoneType' object has no attribute 'startswith'
+2023-07-20 10:25:18,542 WARNING Goodbye!
+2023-07-20 10:25:21,849 WARNING Updates were skipped successfully.
+2023-07-20 10:26:38,521 ERROR Ошибка в работе бота: 
+ HTTPSConnectionPool(host='appstorespcxbfcvy.com', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f2645218a60>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+2023-07-20 12:42:54,046 WARNING Updates were skipped successfully.
+2023-07-20 12:52:07,212 WARNING Goodbye!
+2023-07-20 12:52:13,607 WARNING Updates were skipped successfully.
+2023-07-20 13:00:42,522 WARNING Goodbye!
+2023-07-20 13:00:48,519 WARNING Updates were skipped successfully.
+2023-07-20 13:02:35,260 WARNING Goodbye!
+2023-07-20 13:02:40,260 WARNING Updates were skipped successfully.
+2023-07-20 13:03:35,123 WARNING Goodbye!
+2023-07-20 13:03:38,849 WARNING Updates were skipped successfully.
+2023-07-20 13:03:42,259 ERROR Ошибка в работе бота: 
+ HTTPSConnectionPool(host='tg', port=443): Max retries exceeded with url: //search_hashtag?hashtag=%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f56a8d9c730>: Failed to establish a new connection: [Errno -5] No address associated with hostname'))
+2023-07-20 13:07:56,023 WARNING Goodbye!
+2023-07-20 13:09:23,793 WARNING Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:02:35,425 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:04:48,969 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:05:47,112 Goodbye!
+aiogram  WARNING 2023-07-21 09:05:51,456 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:05:59,001 Goodbye!
+aiogram  WARNING 2023-07-21 09:07:09,580 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:07:17,698 Goodbye!
+aiogram  WARNING 2023-07-21 09:07:35,912 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:08:02,004 Goodbye!
+aiogram  WARNING 2023-07-21 09:08:06,794 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:08:42,814 Goodbye!
+aiogram  WARNING 2023-07-21 09:08:46,385 Updates were skipped successfully.
+aiogram  WARNING 2023-07-21 09:10:37,453 Goodbye!
